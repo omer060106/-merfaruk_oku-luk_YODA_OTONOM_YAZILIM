@@ -1,0 +1,55 @@
+1. Bu ödevde StackFrontier ve QueueFrontier yapıları oluşturuldu.
+2. StackFrontier LIFO mantığıyla çalışmaktadır.
+3. QueueFrontier, StackFrontier sınıfından miras alınarak oluşturulmuştur.
+4. İki yapı arasındaki temel fark remove metodunun çalışma biçimidir.
+5. Stack yapısında pop(), Queue yapısında pop(0) kullanılmıştır.
+6. Bu yapılar DFS ve BFS gibi arama algoritmalarında kullanılabilir.
+
+bu ödevde yapay zekadaki arama algoritmalarının temelinde kullanılan bazı yapıları daha iyi anlamak için adım adım ilerledim
+özellikle dfs ve bfs mantığında verilerin nasıl tutulduğunu görmek açısından stack ve queue yapılarının önemli olduğunu gördüm
+bu yüzden çalışmayı tek dosyada yapmak yerine parçalara ayırarak ilerledim
+
+1 01_list_mantigi py
+
+ilk dosyada önce listenin bu ödevde nasıl kullanılacağını anlamaya çalıştım
+burada append ile listeye eleman eklemeyi pop ile son elemanı çıkarmayı ve pop 0 ile ilk elemanı çıkarmayı gördüm
+aslında bu dosya bana stack ve queue mantığının temel farkını gösterdi
+çünkü aynı liste yapısını kullanıp sadece elemanı nereden çıkardığımıza göre farklı sonuç elde edebildiğimizi fark ettim
+bu kısım ödevin en temel mantığını anlamamı sağladı
+
+2 02_class_mantigi py
+
+ikinci dosyada class yapısını daha iyi anlamaya çalıştım
+burada bir sınıf oluşturup içinde liste tutmayı ve o liste üzerinde işlem yapan metotlar yazmayı öğrendim
+özellikle self kullanımını daha iyi anlamış oldum
+önceden self konusu biraz karışık geliyordu ama burada sınıfın kendi verisine ulaşmak için kullanıldığını daha net gördüm
+
+3 03_stack_frontier py
+
+bu dosyada artık ödevin asıl kısmına geçtim ve stackfrontier sınıfını oluşturdum
+bu sınıfın içinde frontier adında bir liste tuttum
+daha sonra add metodu ile listeye eleman ekledim ve remove metodu ile eleman çıkardım
+burada remove metodunda pop kullandığım için son eklenen elemanın önce çıktığını gördüm
+yani yapının lifo mantığıyla çalıştığını uygulamalı olarak öğrenmiş oldum
+ayrıca liste boşsa hata vermesi için kontrol ekleyerek daha güvenli bir kullanım oluşturmuş oldum
+
+4 04_queue_frontier py
+
+bu dosyada stackfrontier sınıfından miras alan queuefrontier sınıfını yazdım
+buradaki en önemli nokta aynı yapıyı tekrar yazmak yerine var olan sınıftan yararlanmak oldu
+queuefrontier içinde sadece remove metodunu değiştirdim
+bu kez pop 0 kullandığım için ilk eklenen elemanın önce çıktığını gördüm
+yani fifo mantığı oluşmuş oldu
+burada inheritance konusunu daha iyi anladım
+özellikle bir sınıftan başka bir sınıf üretmenin kod tekrarını azalttığını ve işleri daha düzenli hale getirdiğini fark ettim
+
+5 05_frontier_test py
+
+son dosyada yazdığım yapıların doğru çalışıp çalışmadığını test ettim
+stackfrontier içine sırayla eklediğim elemanların ters sırayla çıktığını gördüm
+queuefrontier içinde ise elemanların eklenme sırasına göre çıktığını gördüm
+bu testler sayesinde yazdığım kodun mantığını sadece teorik olarak değil doğrudan çıktı üzerinden de kontrol etmiş oldum
+
+genel olarak bu ödevde liste kullanımı class yapısı metot yazma self kullanımı ve inheritance gibi konuları birlikte kullanmış oldum
+aynı zamanda dfs ve bfs gibi arama algoritmalarının mantığında sadece algoritmanın adı değil veriyi nasıl tuttuğumuzun da çok önemli olduğunu anlamış oldum
+başta zor gibi görünse de adım adım dosyalara bölerek ilerleyince konu daha anlaşılır hale geldi
